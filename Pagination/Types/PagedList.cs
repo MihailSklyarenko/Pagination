@@ -1,6 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
 
-namespace Pagination;
+namespace Pagination.Types;
 
 public class PagedList<T> : List<T>
 {
@@ -8,8 +8,8 @@ public class PagedList<T> : List<T>
     public int TotalPages { get; private set; }
     public int PageSize { get; private set; }
     public int ItemsCount { get; private set; }
-    public bool HasPrevious => CurrentPage > 1;
-    public bool HasNext => CurrentPage < TotalPages;
+    public bool HasPreviousPage => CurrentPage > 1;
+    public bool HasNextPage => CurrentPage < TotalPages;
        
 
     private PagedList(List<T> items, int totalCount, int pageNumber, int pageSize)

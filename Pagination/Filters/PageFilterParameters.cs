@@ -1,4 +1,4 @@
-﻿namespace Pagination;
+﻿namespace Pagination.Filters;
 
 public abstract class PageFilterParameters
 {

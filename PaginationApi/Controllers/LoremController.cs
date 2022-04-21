@@ -1,5 +1,5 @@
 using Microsoft.AspNetCore.Mvc;
-using Pagination;
+using Pagination.Types;
 using PaginationApi.Models;
 using System.Text.Json;
 

@@ -1,4 +1,4 @@
-﻿using Pagination;
+﻿using Pagination.Filters;
 
 namespace PaginationApi.Models
 {
