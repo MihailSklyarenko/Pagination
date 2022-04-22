@@ -41,10 +41,11 @@ namespace PaginationApi.Controllers
         }
 
         [HttpPost("filter")]
-        public PagedList<Lorem> GetForecast(GetLoremRequest loremRequest)
+        public PagedResponse<Lorem> GetForecast(GetLoremRequest loremRequest)
         {
             _logger.LogInformation(JsonSerializer.Serialize(loremRequest));
-            return PagedList<Lorem>.ToPagedList(_loremTop20, loremRequest.PageNumber, loremRequest.PageSize);
+
+            return new PagedResponse<Lorem>(_loremTop20, loremRequest.PageNumber, loremRequest.PageSize);
         }
     }
 }
