@@ -2,18 +2,21 @@
 
 public abstract class PageFilterParameters
 {
-    public int PageNumber { get; set; } = 1;
-
     private readonly int _maxPageSize = 50;
+
+    private int _pageNumber = 1;
     private int _pageSize = 10;
 
-    public PageFilterParameters()
+    public int PageNumber
     {
-    }
-
-    public PageFilterParameters(int maxPageSize)
-    {
-        _maxPageSize = maxPageSize;
+        get
+        {
+            return _pageNumber;
+        }
+        set
+        {
+            _pageNumber = value <= 0 ? _pageNumber : value;
+        }
     }
 
     public int PageSize
@@ -24,7 +27,7 @@ public abstract class PageFilterParameters
         }
         set
         {
-            _pageSize = (value > _maxPageSize) ? _maxPageSize : value;
+            _pageSize = (value <= 0) ? _maxPageSize : value;
         }
     }
 }
